@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Css link -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>SMS</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="container">
+          <label class="site-logo"
+            ><a href="./index.html" class="header-link">Logo</a></label
+          >
+          <ul class="header-list">
+            <li class="header-item">
+              <a href="./index.html" class="header-link">Home</a>
+            </li>
+            <li class="header-item">
+              <a href="./register.html" class="header-link">Register</a>
+            </li>
+            <li class="header-item">
+              <a href="./lists.html" class="header-link" id="list">Lists</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero registration  container">
+        <h2 class="hero-title register-title">Register here...</h2>
+        <form action="#" class="form">
+          
+          <label for="name">Student name</label>
+          <input type="text" name="name" autofocus id="name" placeholder="John Doe"><br>
+          <label for="id">Student ID</label>
+          <input type="text" name="id" id="id" placeholder="AB23"><br>
+          <label for="course">Course</label>
+          <input type="text" name="course" id="course" placeholder="Web Development"><br>
+          <label for="birth">Date of birth</label>
+          <input type="date" name="birth" id="birth"><br>
+          <label for="blood-group" >Blood Group</label>
+          <input type="text" name="blood-group" id="blood-group" placeholder="+2"><br>
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" placeholder="+1 234 567 8987">
+          <input type="hidden" id="objID">
+          <button type="submit" class="submit">Submit</button>
+        </form>
+        <h2 class="hero-title list-title">List of our student and their data</h2>
+        <table class="list-table">
+            <thead class="table-head">
+                <tr>
+                    <th>No</th>
+                    <th>Student name</th>
+                    <th>Student ID</th>
+                    <th>Course</th>
+                    <th>Date of birth</th>
+                    <th>Blood group</th>
+                    <th>Phone number</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                
+            </tbody>
+        </table>
+      </div>
+    </header>
+    <footer class="footer">
+      <div class="footer-box container">
+        <label class="site-logo"><a href="" class="footer-link header-link">Logo</a></label>
+        <ul class="footer-list">
+          <li class="footer-item">
+            <a href="https://www.linkedin.com/feed/" target="_blank" class="footer-link"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+          <li class="footer-item">
+            <a href="https://www.facebook.com/" target="_blank"  class="footer-link"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+          </li>
+          <li class="footer-item">
+            <a href="https://twitter.com" target="_blank" class="footer-link"
+              ><i class="fa-brands fa-square-twitter"></i
+            ></a>
+          </li>
+        </ul>
+    </div>
+      <h4 class="footer-text">All rights reservec &copy;</h4>
+    </footer>
+
+    <!-- index.js file link -->
+    <script src="./JS/index.js"></script>
+  </body>
+</html>
