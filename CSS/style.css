@@ -165,46 +165,51 @@ width: 8px;
 }
 .submit {
   background-color: orange;
-   color: white;
+  color: white;
   padding: 15px 25px;
   font-size: 24px;
   font-weight: 700;
   float: right;
-  /* border: none; */
+  border: none;
   border-radius: 8px;
-  /* transform: translateX(-45px); */
+  transform: translateX(-45px);
 }
-/* .submit:active { */
-  /* transform: scale(0.95) translateX(20px); */
-/* } */
+.submit:active {
+  transform: scale(0.95) translateX(-45px);
+}
+
 /* List page */
 .list-title {
   font-size: 3rem;
 }
-table,
-th,
-td {
+table,th,td {
+  padding: 5px 0;
+  text-align: center;
   border-collapse: collapse;
   border: 1px solid grey;
-  padding: 5px;
+  /* padding-left: 15px; */
 }
 .list-table {
   width: 100%;
   font-size: 1.25rem;
-  /* text-align: center; */
+  margin-bottom: 90px;
 }
-.edit, .delete {
-    color: white;
-    padding: 5px 10px;
-    margin: 7px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 18px;
+.edit,.delete {
+  color: white;
+  padding: 5px 10px;
+  margin: 7px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+.edit:active, .delete:active {
+  transform: scale(0.95);
 }
 .edit {
-    background-color: rgb(53, 53, 250);
-    background: rgb(60, 180, 60);
+  background-color: rgb(53, 53, 250);
+  background: rgb(60, 180, 60);
 }
 .delete {
-    background: rgb(243, 45, 45);
+  background: rgb(243, 45, 45);
 }
