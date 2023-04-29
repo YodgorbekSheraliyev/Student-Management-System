@@ -3,56 +3,58 @@ const nameInput = document.querySelector("#name");
 const idInput = document.querySelector("#id");
 const courseInput = document.querySelector("#course");
 const birth = document.querySelector("#birth");
-const bloodGroup = document.querySelector("#blood-group");
 const phone = document.querySelector("#phone");
 const btnSubmit = document.querySelector(".submit");
 const tBody = document.querySelector(".table-body");
-let objID = document.querySelector('#objID');
+const btnAdd = document.querySelector('.btn-add')
+const  inputSearch = document.querySelector('.search-input')
+let objID = document.querySelector("#objID");
+const tableRows  = document.querySelectorAll('.table-body .tr')
+const btnCancel = document.querySelector('.cancel');
 
 
+
+btnAdd.addEventListener('click', () => {
+  form.style.display = 'block'
+})
+btnCancel.addEventListener('click', () => {
+  form.style.display = 'none'
+
+})
 form.addEventListener("submit", (e) => {
-
   e.preventDefault();
+  // form.style.display = 'none'
 
-if(!objID.value) {
-   studentObj = {
-
+  if (!objID.value) {
+    studentObj = {
       name: nameInput.value,
       course: courseInput.value,
-      id:idInput.value,
+      id: idInput.value,
       birth: birth.value,
-      bloodGroup: bloodGroup.value,
-      phone: phone.value
-
+      phone: phone.value,
     };
 
     objID.value = Date.now();
-    
-  }else{
-    
-    studentObj  = JSON.parse(localStorage.getItem(objID.value))
-    studentObj.name= nameInput.value;
+  } else {
+    studentObj = JSON.parse(localStorage.getItem(objID.value));
+    studentObj.name = nameInput.value;
     studentObj.course = courseInput.value;
-    studentObj.id = idInput.value,
-    studentObj.birth = birth.value;
-    studentObj.bloodGroup = bloodGroup.value;
+    (studentObj.id = idInput.value), (studentObj.birth = birth.value);
     studentObj.phone = phone.value;
   }
-  
   localStorage.setItem(objID.value, JSON.stringify(studentObj));
   form.reset();
-  
-  objID.value = ''
+  objID.value = "";
   print();
+
 });
 
 function print() {
+  tBody.innerHTML = "";
 
-    tBody.innerHTML = "";
+  for (const key in localStorage) {
 
-    for (const key in localStorage) {
     if (localStorage.hasOwnProperty(key)) {
-
       const takenObj = JSON.parse(localStorage.getItem(key));
 
       let keyArray = Object.keys(localStorage);
@@ -60,7 +62,9 @@ function print() {
       let tr = document.createElement("tr");
       let btnEdit = document.createElement("button");
       let btnDelete = document.createElement("button");
-      let td = document.createElement('td');
+      let td = document.createElement("td");
+
+      tr.classList.add('tr')
 
       btnEdit.classList.add("edit");
       btnDelete.classList.add("delete");
@@ -70,11 +74,10 @@ function print() {
 
       tr.innerHTML = `
           <td>${keyArray.indexOf(key) + 1}</td>
-          <td>${takenObj.name}</td>
+          <td class="user-name">${takenObj.name}</td>
           <td >${takenObj.id}</td>
           <td>${takenObj.course}</td>
           <td>${takenObj.birth}</td>
-          <td>${takenObj.bloodGroup}</td>
           <td>${takenObj.phone}</td>
           </td>`;
 
@@ -87,21 +90,21 @@ function print() {
         print();
       });
 
-      btnEdit.addEventListener('click', () => {
-
-        nameInput.value = takenObj.name,
-        courseInput.value = takenObj.course,
-        birth.value = takenObj.birth,
-        bloodGroup.value = takenObj.bloodGroup,
-        phone.value = takenObj.phone,
-        objID.value = key;
+      btnEdit.addEventListener("click", () => {
+        (nameInput.value = takenObj.name),
+          (courseInput.value = takenObj.course),
+          (birth.value = takenObj.birth),
+          (phone.value = takenObj.phone),
+          (objID.value = key);
         console.log(takenObj);
+       console.log(tableRows);
 
-        print()
 
-      })
-
+        print();
+      });
     }
   }
 }
-print()
+
+
+print();
