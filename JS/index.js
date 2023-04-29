@@ -96,8 +96,7 @@ function print() {
           (birth.value = takenObj.birth),
           (phone.value = takenObj.phone),
           (objID.value = key);
-        console.log(takenObj);
-       console.log(tableRows);
+          form.style.display = 'block'
 
 
         print();
