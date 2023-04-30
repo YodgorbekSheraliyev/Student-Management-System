@@ -11,8 +11,12 @@ const  inputSearch = document.querySelector('.search-input')
 let objID = document.querySelector("#objID");
 const tableRows  = document.querySelectorAll('.table-body .tr')
 const btnCancel = document.querySelector('.cancel');
+const menu = document.querySelector('.burger-menu');
 
-
+menu.addEventListener('click', () => {
+  document.querySelector('.nav .container').classList.toggle('navbar');
+  document.querySelector('.header-list').classList.toggle('active-list')
+})
 
 btnAdd.addEventListener('click', () => {
   form.style.display = 'block'
