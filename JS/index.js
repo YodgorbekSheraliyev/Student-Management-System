@@ -12,13 +12,18 @@ let objID = document.querySelector("#objID");
 const tableRows  = document.querySelectorAll('.table-body .tr')
 const btnCancel = document.querySelector('.cancel');
 const menu = document.querySelector('.burger-menu');
+const addBtn = document.querySelector('.add-btn')
 
 menu.addEventListener('click', () => {
   document.querySelector('.nav .container').classList.toggle('navbar');
-  document.querySelector('.header-list').classList.toggle('active-list')
+  document.querySelector('.header-list').classList.toggle('active-list');
+  document.querySelector('.menu').classList.toggle('active-menu')
 })
 
 btnAdd.addEventListener('click', () => {
+  form.style.display = 'block'
+})
+addBtn.addEventListener('click', () => {
   form.style.display = 'block'
 })
 btnCancel.addEventListener('click', () => {
